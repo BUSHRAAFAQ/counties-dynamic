@@ -1,4 +1,5 @@
-export default function CountryName({params}:any){
+export default function CountryName({params}:{name:string,population:number,capital:string})
+{
   const countries: { //arry of multiples objects of countries
     name:string,
     population :number,
@@ -34,11 +35,11 @@ export default function CountryName({params}:any){
    return countries.find(country=>country.name.toLowerCase()==country_url.toLocaleLowerCase())
   }
 
-  let result = findCountry(params.country_name);
+    const result = findCountry(params.country_name);
  return(
         <div>
             {
-                result ?(
+               result ?(
                     <>
                       <h1 >Country Name:{result.name}</h1>
             <h1>Country Capital:{result.capital}</h1>
